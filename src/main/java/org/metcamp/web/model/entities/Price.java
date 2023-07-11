@@ -1,4 +1,4 @@
-package org.metcamp.web.entities;
+package org.metcamp.web.model.entities;
 
 import lombok.*;
 
