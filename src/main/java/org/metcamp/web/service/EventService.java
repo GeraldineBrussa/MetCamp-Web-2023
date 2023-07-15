@@ -41,8 +41,9 @@ public class EventService {
         Event newEventData = MAPPER.readValue(json, Event.class);
         Optional<Event> foundEvent= findEventById(id);
         foundEvent.ifPresent(e -> e.update(newEventData));
+
     }
-    public void deletEvent(int id){
+    public void deleteEvent(int id){
         Optional<Event> foundEvent= findEventById(id);
         foundEvent.ifPresent(events::remove);
     }

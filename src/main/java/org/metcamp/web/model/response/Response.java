@@ -3,7 +3,7 @@ package org.metcamp.web.model.response;
 import lombok.*;
 @Getter@Setter
 
-public class Response extends Object{
+public class Response {
     private int code;
     private String message;
 
