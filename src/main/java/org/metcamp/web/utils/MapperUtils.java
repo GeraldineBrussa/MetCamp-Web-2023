@@ -3,10 +3,9 @@ package org.metcamp.web.utils;
 import com.fasterxml.jackson.core.JsonProcessingException;
 
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.metcamp.web.exceptions.ConvertionException;
-import org.metcamp.web.model.entities.Event;
+import org.metcamp.web.entities.model.Event;
 
 import java.util.ArrayList;
 

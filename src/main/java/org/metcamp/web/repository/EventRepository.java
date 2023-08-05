@@ -1,8 +1,10 @@
 package org.metcamp.web.repository;
 
 import lombok.Getter;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.metcamp.web.exceptions.RepoException;
-import org.metcamp.web.model.entities.Event;
+import org.metcamp.web.entities.model.Event;
 import org.metcamp.web.utils.MapperUtils;
 
 import java.io.IOException;
@@ -12,7 +14,9 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Optional;
 
+
 public class EventRepository {
+    private static final Logger logger = LogManager.getLogger();
     @Getter
     private final ArrayList<Event> events;
     private final MapperUtils mapperUtils;

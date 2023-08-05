@@ -2,11 +2,12 @@ package org.metcamp.web;
 
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import org.metcamp.web.model.response.EventListResponse;
-import org.metcamp.web.model.response.EventResponse;
-import org.metcamp.web.model.response.Response;
+import org.metcamp.web.entities.response.EventListResponse;
+import org.metcamp.web.entities.response.EventResponse;
+import org.metcamp.web.entities.response.Response;
 import org.metcamp.web.repository.EventRepository;
 import org.metcamp.web.service.EventService;
+import org.metcamp.web.service.ValidationService;
 import org.metcamp.web.utils.MapperUtils;
 import java.util.Scanner;
 
@@ -15,7 +16,8 @@ public class Main {
     private static final Scanner SCANNER = new Scanner(System.in);
     private static final MapperUtils mapperUtils = new MapperUtils();
     private static final EventRepository repository = new EventRepository(mapperUtils);
-    private static final EventService eventService = new EventService(mapperUtils, repository);
+    private static final ValidationService validationService = new ValidationService();
+    private static final EventService eventService = new EventService(mapperUtils, repository, validationService);
     public static final String WELCOME_MSG = "Bienvenidx al sistema de eventos. Qué acción deseas realizar?";
     public static final String OPTIONS = "\nSeleccione una opción" +
             ":\n1 -> Crear un evento" +
@@ -38,6 +40,7 @@ public class Main {
             switch (option) {
                 case 1:
                     System.out.println("------> Ingrese los datos del evento a crear");
+                    response = eventService.createEvent(SCANNER.nextLine());
                     if (response.getCode() == 201){
                         System.out.println(response);
                         EventResponse eventResponse = (EventResponse) response;

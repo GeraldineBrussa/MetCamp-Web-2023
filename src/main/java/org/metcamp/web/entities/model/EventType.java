@@ -1,4 +1,4 @@
-package org.metcamp.web.model.entities;
+package org.metcamp.web.entities.model;
 
 public enum EventType {
     ANIVERSARIO,

@@ -1,4 +1,4 @@
-package org.metcamp.web.model.entities;
+package org.metcamp.web.entities.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;

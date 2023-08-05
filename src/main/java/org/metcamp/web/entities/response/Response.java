@@ -1,4 +1,4 @@
-package org.metcamp.web.model.response;
+package org.metcamp.web.entities.response;
 
 import lombok.*;
 @Getter@Setter

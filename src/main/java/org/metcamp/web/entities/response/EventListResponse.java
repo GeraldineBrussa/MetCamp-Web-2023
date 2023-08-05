@@ -1,7 +1,7 @@
-package org.metcamp.web.model.response;
+package org.metcamp.web.entities.response;
 
 import lombok.*;
-import org.metcamp.web.model.entities.Event;
+import org.metcamp.web.entities.model.Event;
 
 import java.util.ArrayList;
 @Getter@Setter
